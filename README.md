@@ -53,3 +53,13 @@ Weatherify is a responsive, lightweight web application that fetches and display
 Contributions are always welcome!
  Feel free to fork the repo, create a branch, and submit a pull request.
 For major changes, please open an issue first to discuss what you’d like to change.
+
+## Screenshot
+![ss](https://github.com/user-attachments/assets/252e6654-6a84-45e7-a849-774d63af0d35)
+
+![Ss](https://github.com/user-attachments/assets/657fd2ac-e471-42c4-8fea-4d124d6994d0)
+
+![Ss](https://github.com/user-attachments/assets/3602adc1-cfbd-4733-976e-725028927a2d)
+
+
+
