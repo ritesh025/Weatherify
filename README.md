@@ -46,6 +46,8 @@ Weatherify is a responsive, lightweight web application that fetches and display
 - Google Fonts
 
 - Hugeicons for Icons
+
+- Openweather API for realtime weather
 ## 🤝Contributing
 
 Contributions are always welcome!
