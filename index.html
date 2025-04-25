@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weatherify</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <!-- Google icons import -->
+  </head>
+  <body>
+    <main class="main-container">
+      <header class="input-container">
+        <!--<input class="city-input" placeholder="Enter city name" type="text" -->
+        <input class="city-input" list="city-suggestions" placeholder="Enter city name" type="text" />
+        <datalist id="city-suggestions"></datalist>
+        <button class="search-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            height="30"
+            width="30"
+            color="#ffffff"
+            fill="none"
+          >
+            <path
+              d="M17 17L21 21"
+              stroke="#ffffff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z"
+              stroke="#ffffff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </header>
+
+      <section class="weather-info" style="display: none;">
+        <div class="location-date-container">
+          <div class="location">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="30"
+              height="30"
+              color="#ffffff"
+              fill="none"
+            >
+              <path
+                d="M13.6177 21.367C13.1841 21.773 12.6044 22 12.0011 22C11.3978 22 10.8182 21.773 10.3845 21.367C6.41302 17.626 1.09076 13.4469 3.68627 7.37966C5.08963 4.09916 8.45834 2 12.0011 2C15.5439 2 18.9126 4.09916 20.316 7.37966C22.9082 13.4393 17.599 17.6389 13.6177 21.367Z"
+                stroke="#ffffff"
+                stroke-width="1.5"
+              ></path>
+              <path
+                d="M15.5 11C15.5 12.933 13.933 14.5 12 14.5C10.067 14.5 8.5 12.933 8.5 11C8.5 9.067 10.067 7.5 12 7.5C13.933 7.5 15.5 9.067 15.5 11Z"
+                stroke="#ffffff"
+                stroke-width="1.5"
+              ></path>
+            </svg>
+            <h4 class="country-text">Jaipur</h4>
+          </div>
+          <h5 class="current-date-text">Wed, 07 Jan</h5>
+        </div>
+        <div class="weather-summary-container">
+          <img
+            src="assets/assets/weather/clouds.svg"
+            alt=""
+            class="weather-summary-img"
+          />
+          <div class="weather-summary-info">
+            <h1 class="temp-text">49 °C</h1>
+            <h3 class="condition-text regular-text">Clouds</h3>
+          </div>
+        </div>
+
+        <div class="weather-conditions-container">
+          <div class="condition-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="30"
+              height="30"
+              color="#ffffff"
+              fill="none"
+            >
+              <path
+                d="M3.5 13.678C3.5 9.49387 7.08079 5.35907 9.59413 2.97222C10.9591 1.67593 13.0409 1.67593 14.4059 2.97222C16.9192 5.35907 20.5 9.49387 20.5 13.678C20.5 17.7804 17.2812 22 12 22C6.71878 22 3.5 17.7804 3.5 13.678Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path
+                d="M16 14C16 16.2091 14.2091 18 12 18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="condition-info">
+              <h5 class="regular-text">Humidity</h5>
+              <h5 class="humidity-value-text">50%</h5>
+            </div>
+          </div>
+
+          <div class="condition-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="30"
+              height="30"
+              color="#ffffff"
+              fill="none"
+            >
+              <path
+                d="M2 5.94145C5.5 9.37313 10.5755 7.90241 11.7324 5.94145C11.9026 5.65301 12 5.31814 12 4.96096C12 3.87795 11.1046 3 10 3C8.89543 3 8 3.87795 8 4.96096"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M17 8.92814C17 7.31097 18.1193 6 19.5 6C20.8807 6 22 7.31097 22 8.92814C22 9.6452 21.7799 10.3021 21.4146 10.8111C19.3463 14.1915 9.2764 12.9164 4 11.8563"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M13.0854 19.8873C13.2913 20.5356 13.8469 21 14.5 21C15.3284 21 16 20.2528 16 19.331C16 19.0176 15.9224 18.7244 15.7873 18.4738C14.4999 15.9925 7.99996 14.3239 2 18.7746"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M19 15.5H21"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="condition-item">
+              <div class="condition-info">
+                <h5 class="regular-text">Wind Speed</h5>
+                <h5 class="wind-value-text">5km/h</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast-items-container">
+          <div class="forecast-item">
+            <h5 class="forecast-item-date regular-text">26 May</h5>
+            <img
+              src="assets/assets/weather/thunderstorm.svg"
+              class="forecast-item-img"
+            />
+            <h5 class="forecast-item-temp">29 °C</h5>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="forecast-item-date regular-text">26 May</h5>
+            <img
+              src="assets/assets/weather/thunderstorm.svg"
+              class="forecast-item-img"
+            />
+            <h5 class="forecast-item-temp">29 °C</h5>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="forecast-item-date regular-text">26 May</h5>
+            <img
+              src="assets/assets/weather/thunderstorm.svg"
+              class="forecast-item-img"
+            />
+            <h5 class="forecast-item-temp">29 °C</h5>
+          </div>
+
+          <div class="forecast-item">
+            <h5 class="forecast-item-date regular-text">26 May</h5>
+            <img
+              src="assets/assets/weather/thunderstorm.svg"
+              class="forecast-item-img"
+            />
+            <h5 class="forecast-item-temp">29 °C</h5>
+          </div>
+        </div>
+      </section>
+
+     <section class="search-city section-message">
+        <img src="assets/assets/message/search-city.png" class="message-img">
+        <div>
+            <h1>Search for a city</h1>
+            <h4 class="regular-text">
+                Find out the Weather condition of the City
+            </h4>
+        </div>
+      </section>
+
+       <section class="not-found section-message" style="display: none;">
+        <img src="assets/assets/message/not-found.png">
+        <div>
+            <h1>Sorry, Search city not found</h1>
+            <h4 class="regular-text">
+                Try searching for another city
+            </h4>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
